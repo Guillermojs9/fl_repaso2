@@ -21,7 +21,6 @@ class Listview1Screen extends StatelessWidget {
             ...equipos.map(
               (e) => ListTile(
                 title: Text(e),
-                //leading: const Icon(Icons.access_time),
                 trailing: const Icon(Icons.arrow_forward_ios_outlined),
               ),
             )

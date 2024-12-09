@@ -1,4 +1,4 @@
-import 'package:fl_repaso/screens/router/app_routes.dart';
+import 'package:fl_repaso/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'screens/screens.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       home: const HomeScreen(),
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }

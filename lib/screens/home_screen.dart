@@ -1,4 +1,4 @@
-import 'package:fl_repaso/screens/listview1_screen.dart';
+import 'package:fl_repaso/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,14 +13,14 @@ class HomeScreen extends StatelessWidget {
         ),
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
-            title: const Text("Nombre de la ruta"),
-            leading: const Icon(Icons.access_time_filled_outlined),
-            onTap: () {
-              final route = MaterialPageRoute(builder: (context) => const Listview1Screen());
-              Navigator.push(context, route);
-            },
-          ),
+                  title: Text(AppRoutes.MenuOptions[index].name),
+                  leading: Icon(AppRoutes.MenuOptions[index].icon),
+                  onTap: () {
+                    Navigator.pushNamed(
+                        context, AppRoutes.MenuOptions[index].route);
+                  },
+                ),
             separatorBuilder: (context, index) => const Divider(),
-            itemCount: 5));
+            itemCount: AppRoutes.MenuOptions.length));
   }
 }
